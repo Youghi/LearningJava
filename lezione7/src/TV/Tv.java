@@ -85,35 +85,51 @@ public class Tv {
 	}
 
 	public void volumeDown() {
-		this.volume--;
-		for (int i = 0; i < this.volume; i++) {
-			System.out.print("█");
+		if (this.volume > 0) {
+			this.volume--;
+			for (int i = 0; i < this.volume; i++) {
+				System.out.print("█");
+			}
+			System.out.print("♫" + this.volume + "\n");
+		} else {
+			System.out.println("min ♫");
 		}
-		System.out.print("♫" + this.volume + "\n");
 	}
 
 	public void volumeUp() {
-		this.volume++;
-		for (int i = 0; i < this.volume; i++) {
-			System.out.print("█");
+		if (this.volume < 10) {
+			this.volume++;
+			for (int i = 0; i < this.volume; i++) {
+				System.out.print("█");
+			}
+			System.out.print("♫" + this.volume + "\n");
+		} else {
+			System.out.println("MAX ♫");
 		}
-		System.out.print("♫" + this.volume + "\n");
 	}
 
 	public void brightnesDown() {
-		this.bightnes--;
-		for (int i = 0; i < this.bightnes; i++) {
-			System.out.print("█");
+		if (this.bightnes > 0) {
+			this.bightnes--;
+			for (int i = 0; i < this.bightnes; i++) {
+				System.out.print("█");
+			}
+			System.out.print("☼" + this.bightnes + "\n");
+		} else {
+			System.out.println("min ☼");
 		}
-		System.out.print("☼" + this.bightnes + "\n");
 	}
 
 	public void brightnesUp() {
-		this.bightnes++;
-		for (int i = 0; i < this.bightnes; i++) {
-			System.out.print("█");
+		if (this.bightnes < 10) {
+			this.bightnes++;
+			for (int i = 0; i < this.bightnes; i++) {
+				System.out.print("█");
+			}
+			System.out.print("☼" + this.bightnes + "\n");
+		} else {
+			System.out.println("MAX ☼");
 		}
-		System.out.print("☼" + this.bightnes + "\n");
 	}
 
 	public String getSettedChanel() {
@@ -148,6 +164,7 @@ public class Tv {
 		case 9:
 		case 10:
 			setChanel(action);
+			System.out.println(getSettedChanel());
 			break;
 
 		case 11:

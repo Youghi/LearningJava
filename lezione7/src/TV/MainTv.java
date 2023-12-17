@@ -10,6 +10,18 @@ public class MainTv {
 		Scanner userInput = new Scanner(System.in);
 		ArrayList<Persona> persons = persons();
 		Persona buyer = selectBuyer(persons);
+		Tv tv = sell(buyer);
+		System.out.println("\n-1 per usare tv \n-2 per uscire");
+		int index = userInput.nextInt();
+		if (index == 1) {
+			int button = 0;
+			System.out.println(
+					"canali 1-10 \n 11On/Off \n 12 volume su \n 13 volume giu \n 14 luminosita su \n 15 luminosita giu \n 16 per uscire");
+			while (button != 16) {
+				button = userInput.nextInt();
+				tv.remoteController(button);
+			}
+		}
 
 	}
 
@@ -62,24 +74,28 @@ public class MainTv {
 		return buyer;
 	}
 
-	public void sell(Persona person) {
+	public static Tv sell(Persona person) {
 		if (person.isAdult() == true) {
+			System.out.println("complimenti, hai acquistato una tv");
 			Tv tv = initTv();
 			assignTvOwner(tv, person);
-		} else
+			return tv;
+		} else {
 			System.out.println("devi essere magiorenne per acquistare una TV");
+		}
+		return null;
 
 	}
 
-	public Tv initTv() {
+	public static Tv initTv() {
 		Scanner userIn = new Scanner(System.in);
-		int chanelNum = userIn.nextInt();
 		System.out.println("impostare canale 1-10: ");
+		int chanelNum = userIn.nextInt();
 		Tv tv = new Tv(chanelNum);
 		return tv;
 	}
 
-	public void assignTvOwner(Tv tv, Persona owner) {
+	public static void assignTvOwner(Tv tv, Persona owner) {
 		tv.setOwner(owner);
 	}
 
