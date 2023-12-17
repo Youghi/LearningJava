@@ -1,7 +1,8 @@
 package TV;
 
 /*
- 	Realizza la classe Televisore che ha come attributi isSpento, volume, canale, luminosità ed i
+ 	prova
+  	Realizza la classe Televisore che ha come attributi isSpento, volume, canale, luminosità ed i
 	seguenti metodi:
 	● accendi() : per accendere e spegnere il televisore
 	● regolaVolume(): per abbassare o aumentare il volume in una scala da 0 a 10, il volume
