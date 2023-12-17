@@ -1,7 +1,5 @@
 package esercizio25Penna;
 
-
-
 /*
  	Definisci la classe Penna caratterizzata dagli attributi colore e inchiostro rimanente. La quantità
 	di inchiostro è un numero compreso fra 0 (inchiostro finito) e 100 (penna piena), i colori possibili
@@ -17,17 +15,11 @@ package esercizio25Penna;
 	finita e se non è finita, quanto inchiostro è rimasto.
  */
 
-
-
-
-
-
-
 public class Penna {
 	private int ink = 100;
 	private String color;
-	
-	public Penna (String color) {
+
+	public Penna(String color) {
 		this.color = color;
 	}
 
@@ -38,22 +30,23 @@ public class Penna {
 	public String getColor() {
 		return color;
 	}
-	
+
 	public void inkOut() {
-		System.out.print("inchiostro rimanente:\n");
+		System.out.print("\ninchiostro rimanente:\n");
 		for (int i = 0; i < this.ink; i++) {
 			System.out.print("█");
 		}
-		System.out.print(this.ink + "\n");
+		System.out.print(this.ink);
+		System.out.println(" ");
 	}
-	
-	public void write (String frase) {
+
+	public void write(String frase) {
 		int length = frase.replace(" ", "").length();
-		//System.out.println("str= " + length);
+		// System.out.println("str= " + length);
 		this.ink = this.ink - length;
-		//System.out.println(ink);
+		// System.out.println(ink);
 		inkOut();
-		
+
 	}
 
 }

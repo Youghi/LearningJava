@@ -1,4 +1,5 @@
 package esercizio25Penna;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 /*
@@ -16,31 +17,30 @@ verrà generato casualmente il numero di lettere da scrivere (dovrà essere un n
 finita e se non è finita, quanto inchiostro è rimasto.
 */
 
-
-
 public class MainPenna {
 
-	public static void main(String[] args) throws InterruptedException{
-		
+	public static void main(String[] args) throws InterruptedException {
+
 		Scanner userInput = new Scanner(System.in);
 		ArrayList<Penna> penne = new ArrayList<>();
-		
-		while (true) {
+		int index = 0;
+		while (index != 2) {
 			System.out.println("inserire colore della penna: ");
 			String colore = userInput.next();
 
 			penne.add(new Penna(colore));
-			
-			//Thread.sleep(1000);
-			
+
+			// Thread.sleep(1000);
+
 			System.out.println("\n- 1 per aggiungere una penna di colore diverso \n- 2 per continuare  \n");
-			int index = userInput.nextInt();
-			if (index==2) 
+			index = userInput.nextInt();
+			if (index == 2)
 				break;
-			
+
 		}
-		
-		while (true) {
+		String frase;
+		index = 1;
+		while (index != 0) {
 			System.out.println("inserire colore della penna con cui scrivere: ");
 			String color = userInput.next();
 			for (Penna penna : penne) {
@@ -49,36 +49,32 @@ public class MainPenna {
 				if (color.endsWith(colorCheck)) {
 					//
 					//
-					if (penna.getInk()>0) {
+					if (penna.getInk() > 0) {
 						System.out.println("scrivi " + penna.getColor() + "\n");
 						penna.inkOut();
-						System.out.print("\n");
-						while (penna.getInk()>0) {
-							System.out.print("scrivi qualcosa: ");
-							String frase = userInput.nextLine();
+						userInput.nextLine();
+						while (penna.getInk() > 0) {
+							System.out.println("scrivi qualcosa: ");
+							frase = userInput.nextLine();
 							if (frase.isEmpty() == false) {
 								penna.write(frase);
-								//Thread.sleep(3000);
+							} else {
+								System.out.println("non hai scritto niente");
 							}
 						}
-					}else {
+					} else {
 						System.out.println("inchiostro della penna " + penna.getColor() + " finito");
 					}
-					
+
 				}
 			}
-			//Thread.sleep(3000);
+			// Thread.sleep(3000);
 			System.out.println("\n- 1 per scrivere con un'altra penna \n- 0 per chiudere  \n");
-			int index = userInput.nextInt();
-			if (index==0) 
+			index = userInput.nextInt();
+			if (index == 0)
 				break;
 		}
-		
-		
-		
-		
-		
+
 	}
 
 }
-
