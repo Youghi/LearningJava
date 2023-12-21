@@ -1,5 +1,7 @@
 package newPunto;
 
+import java.util.Scanner;
+
 /*
 	1. Definisci una classe Punto che abbia come attributi le coordinate x e y di un punto.
 	
@@ -13,8 +15,8 @@ package newPunto;
 	11. Nella classe Punto definisco un metodo che calcola la distanza di un punto da un altro
 	
 	12. Nel metodo main genero due punti generando casualmente le coordinate del punto che
-	possono avere valori interi compresi fra 0 e 10 E utilizzando la funzione appena creata ne faccio il confronto stabilendo se sono diversi
-	o uguali.
+	possono avere valori interi compresi fra 0 e 10 E utilizzando la funzione appena creata 
+	ne faccio il confronto stabilendo se sono diversi o uguali.
 	
 	13. Nel classe Punto definisco una funzione generaPunto() che genera e ritorna un oggetto
 		di classe Punto generando casualmente le coordinate del punto che possono avere
@@ -43,8 +45,97 @@ package newPunto;
 public class MainPunto {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+
+		Scanner userIn = new Scanner(System.in);
+		Boolean check = false;
+
+		while (check == false) {
+			System.out.println("inserire x:");
+			int x = userIn.nextInt();
+			check = Punto.isPositive(x);
+		}
+		
+		check = false;
+		
+		while (check == false) {
+			System.out.println("\n" + "inserire y:");
+			int y = userIn.nextInt();
+			check = Punto.isPositive(y);
+		}
+		
+		
+		
 
 	}
+	
+	public static Triangolo initTriangolo() {
+		Scanner userIn = new Scanner(System.in);
+		Boolean check = false;
+		System.out.println("inserire le coordinate dei 3 vertici:" );
+		
+		System.out.println("vertice 1");
+		int xV1;
+		while (check == false) {
+			System.out.println("inserire x:");
+			xV1 = userIn.nextInt();
+			check = Punto.isPositive(xV1);
+		}
+		
+		check = false;
+		int yV1;
+		while (check == false) {
+			System.out.println("\n" + "inserire y:");
+			yV1 = userIn.nextInt();
+			check = Punto.isPositive(yV1);
+		}
+		
+		Punto v1 = new Punto(xV1, yV1);
+		
+		System.out.println("vertice 1");
+		int xV2;
+		while (check == false) {
+			System.out.println("inserire x:");
+			xV2 = userIn.nextInt();
+			check = Punto.isPositive(xV2);
+		}
+		
+		check = false;
+		int yV2;
+		while (check == false) {
+			System.out.println("\n" + "inserire y:");
+			yV2 = userIn.nextInt();
+			check = Punto.isPositive(yV2);
+		}
+		
+		Punto v2 = new Punto(xV2, yV2);
+		
+		
+		System.out.println("vertice 1");
+		int xV3;
+		while (check == false) {
+			System.out.println("inserire x:");
+			xV3 = userIn.nextInt();
+			check = Punto.isPositive(xV3);
+		}
+		
+		check = false;
+		int yV3;
+		while (check == false) {
+			System.out.println("\n" + "inserire y:");
+			yV3 = userIn.nextInt();
+			check = Punto.isPositive(yV3);
+		}
+		
+		Punto v3 = new Punto(xV3, yV3);
+		
+		
+		
+		
+		
+		
+		return triangolo;
+	}
+
+	
 
 }

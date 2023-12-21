@@ -52,7 +52,7 @@ public class MainTv {
 		Scanner userInput = new Scanner(System.in);
 		Persona buyer = null;
 		int index = 1;
-		do {
+		while (index == 1) {
 			System.out.println("inserire il tuo nome: ");
 			String name = userInput.next();
 			for (Persona persona : persons) {
@@ -69,7 +69,7 @@ public class MainTv {
 			index = userInput.nextInt();
 			if (index == 0)
 				break;
-		} while (index == 1);
+		}
 
 		return buyer;
 	}
