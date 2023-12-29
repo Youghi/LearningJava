@@ -47,21 +47,32 @@ public class MainPunto {
 	public static void main(String[] args) {
 
 		Scanner userIn = new Scanner(System.in);
-		Boolean check = false;
 
-		while (check == false) {
-			System.out.println("inserire x:");
-			int x = userIn.nextInt();
-			check = Punto.isPositive(x);
-		}
+		Triangolo triangolo = initTriangolo();
+
+		triangolo.getVertices();
+		triangolo.latOut();
+		Boolean equilateroCheck = triangolo.isEquilatero();
+		System.out.println(
+				equilateroCheck == true
+						? "area del triangolo: " + areaOfEquiTri(triangolo) + "\n" + "perimetro del triangolo: "
+								+ triangolo.perimeter()
+						: "");
 		
-		check = false;
-		
-		while (check == false) {
-			System.out.println("\n" + "inserire y:");
-			int y = userIn.nextInt();
-			check = Punto.isPositive(y);
-		}
+//		Boolean check = false;
+//		while (check == false) {
+//			System.out.println("inserire x:");
+//			int x = userIn.nextInt();
+//			check = Punto.isPositive(x);
+//		}
+//		
+//		check = false;
+//		
+//		while (check == false) {
+//			System.out.println("\n" + "inserire y:");
+//			int y = userIn.nextInt();
+//			check = Punto.isPositive(y);
+//		}
 		
 		
 		
@@ -69,73 +80,86 @@ public class MainPunto {
 	}
 	
 	public static Triangolo initTriangolo() {
-		Scanner userIn = new Scanner(System.in);
-		Boolean check = false;
-		System.out.println("inserire le coordinate dei 3 vertici:" );
+//		Scanner userIn = new Scanner(System.in);
+//		System.out.println("inserire le coordinate dei 3 vertici:" );
+//		
+//		System.out.println("vertice 1");
+//
+//		Boolean check = false;
+//		double xV1 = 0;
+//		while (check == false) {
+//			System.out.println("inserire x:");
+//			xV1 = userIn.nextDouble();
+//			// System.out.println(xV1);
+//			check = isPositive(xV1);
+//		}
+//		
+//		check = false;
+//		double yV1 = 0;
+//		while (check == false) {
+//			System.out.println("inserire y:");
+//			yV1 = userIn.nextDouble();
+//			check = isPositive(yV1);
+//		}
+//		Punto v1 = new Punto(xV1, yV1);
+//		
+//		System.out.println("vertice 2");
+//
+//		check = false;
+//		double xV2 = 0;
+//		while (check == false) {
+//			System.out.println("inserire x:");
+//			xV2 = userIn.nextDouble();
+//			check = isPositive(xV2);
+//		}
+//		
+//		check = false;
+//		double yV2 = 0;
+//		while (check == false) {
+//			System.out.println("inserire y:");
+//			yV2 = userIn.nextDouble();
+//			check = isPositive(yV2);
+//		}
+//		Punto v2 = new Punto(xV2, yV2);
+//		
+//		
+//		System.out.println("vertice 3");
+//
+//		check = false;
+//		double xV3 = 0;
+//		while (check == false) {
+//			System.out.println("inserire x:");
+//			xV3 = userIn.nextDouble();
+//			check = isPositive(xV3);
+//		}
+//		
+//		check = false;
+//		double yV3 = 0;
+//		while (check == false) {
+//			System.out.println("inserire y:");
+//			yV3 = userIn.nextDouble();
+//			check = isPositive(yV3);
+//		}
+//		Punto v3 = new Punto(xV3, yV3);
 		
-		System.out.println("vertice 1");
-		int xV1;
-		while (check == false) {
-			System.out.println("inserire x:");
-			xV1 = userIn.nextInt();
-			check = Punto.isPositive(xV1);
-		}
+		Punto v1 = Punto.generateP();
+		Punto v2 = Punto.generateP();
+		Punto v3 = Punto.generateP();
 		
-		check = false;
-		int yV1;
-		while (check == false) {
-			System.out.println("\n" + "inserire y:");
-			yV1 = userIn.nextInt();
-			check = Punto.isPositive(yV1);
-		}
-		
-		Punto v1 = new Punto(xV1, yV1);
-		
-		System.out.println("vertice 1");
-		int xV2;
-		while (check == false) {
-			System.out.println("inserire x:");
-			xV2 = userIn.nextInt();
-			check = Punto.isPositive(xV2);
-		}
-		
-		check = false;
-		int yV2;
-		while (check == false) {
-			System.out.println("\n" + "inserire y:");
-			yV2 = userIn.nextInt();
-			check = Punto.isPositive(yV2);
-		}
-		
-		Punto v2 = new Punto(xV2, yV2);
-		
-		
-		System.out.println("vertice 1");
-		int xV3;
-		while (check == false) {
-			System.out.println("inserire x:");
-			xV3 = userIn.nextInt();
-			check = Punto.isPositive(xV3);
-		}
-		
-		check = false;
-		int yV3;
-		while (check == false) {
-			System.out.println("\n" + "inserire y:");
-			yV3 = userIn.nextInt();
-			check = Punto.isPositive(yV3);
-		}
-		
-		Punto v3 = new Punto(xV3, yV3);
-		
-		
-		
-		
-		
+		Triangolo triangolo = new Triangolo(v1, v2, v3);
 		
 		return triangolo;
 	}
 
+	public static Boolean isPositive(double cord) {
+		System.out.println(cord >= 0 ? "" : "coordinata non valida");
+		return cord >= 0 ? true : false;
+	}
 	
+	public static double areaOfEquiTri(Triangolo tri) {
+		// A=(√(3)/4)L2
+		double area = (Math.sqrt(3) * 4) * tri.getLat1();
+		return area;
+	}
 
 }

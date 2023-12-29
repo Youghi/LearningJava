@@ -1,19 +1,12 @@
 package newPunto;
 
 public class Punto {
-	private int x;
-	private int y;
+	private double x;
+	private double y;
 	
-	public Punto (int x, int y) {
+	public Punto(double x, double y) {
 		this.x = x;
 		this.y = y;
-	}
-	
-	
-	
-	public static Boolean isPositive(int cord) {
-		System.out.println(cord > 0 ? "" : "coordinata non valida");
-		return cord > 0 ? true : false;
 	}
 	
 	public double dist (Punto p2) {
@@ -21,15 +14,22 @@ public class Punto {
 		return dist;
 	}
 
-
-
-	public int getX() {
+	public double getX() {
 		return x;
 	}
 
-
-
-	public int getY() {
+	public double getY() {
 		return y;
+	}
+
+	public void cordsOut() {
+		System.out.print(" x = " + x + " y = " + y);
+	}
+
+	public static Punto generateP() {
+		double cordX = (int) (Math.random() * 10);
+		double cordY = (int) (Math.random() * 10);
+		Punto p = new Punto(cordX, cordY);
+		return p;
 	}
 }
