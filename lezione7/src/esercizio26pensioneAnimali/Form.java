@@ -13,6 +13,15 @@ public class Form {
 		this.schedule = schedule;
 	}
 	
+	public void getForm() {
+		System.out.println("dati registrazione:" + "\n");
+		this.schedule.getSchedule();
+		System.out.println("\n" + "dati proprietario: " + "\n");
+		this.owner.getOwner();
+		System.out.println("\n" + "dati animale:" + "\n");
+		this.animal.getAnimal();
+	}
+
 	public int getCode() {
 		return code;
 	}
@@ -40,6 +49,7 @@ public class Form {
 	public void setSchedule(Schedule schedule) {
 		this.schedule = schedule;
 	}
+
 
 
 	

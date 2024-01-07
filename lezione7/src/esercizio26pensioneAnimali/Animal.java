@@ -7,8 +7,7 @@ public class Animal {
 	private double weight;
 	private String favFood;
 
-	public Animal(String type, String name, double height, double weight, String favFood, Owner owner,
-			Schedule schedule) {
+	public Animal(String type, String name, double height, double weight, String favFood) {
 		this.type = type;
 		this.name = name;
 		this.height = height;
@@ -18,10 +17,10 @@ public class Animal {
 
 	public void getAnimal() {
 		System.out.println("tipo animale: " + type);
-		System.out.println("nome animale :");
-		System.out.println();
-		System.out.println();
-		System.out.println();
+		System.out.println("nome animale :" + name);
+		System.out.println("altezza " + name + ":  " + height);
+		System.out.println("peso " + name + ":  " + weight);
+		System.out.println("cibo preferito " + name + ":  " + favFood);
 	}
 
 	public String getType() {
