@@ -14,11 +14,12 @@ public class Form {
 	}
 	
 	public void getForm() {
-		System.out.println("dati registrazione:" + "\n");
+		System.out.println("\n" + "**************codice scheda**************" + "\n" + this.code);
+		System.out.println("\n" + "dati registrazione:" + "\n");
 		this.schedule.getSchedule();
-		System.out.println("\n" + "dati proprietario: " + "\n");
+		System.out.println("\n" + ">>>dati proprietario: ");
 		this.owner.getOwner();
-		System.out.println("\n" + "dati animale:" + "\n");
+		System.out.println("\n" + ">>>dati animale: " + "\n");
 		this.animal.getAnimal();
 	}
 

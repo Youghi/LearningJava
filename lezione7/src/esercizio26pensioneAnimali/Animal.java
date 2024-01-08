@@ -17,7 +17,7 @@ public class Animal {
 
 	public void getAnimal() {
 		System.out.println("tipo animale: " + type);
-		System.out.println("nome animale :" + name);
+		System.out.println("nome animale : " + name);
 		System.out.println("altezza " + name + ":  " + height);
 		System.out.println("peso " + name + ":  " + weight);
 		System.out.println("cibo preferito " + name + ":  " + favFood);
