@@ -144,14 +144,88 @@ public class MainPensione {
 
 
 	public static Owner ownerModifyer(Owner owner) {
+		Owner newOwner = owner;
+		Scanner userIn = new Scanner(System.in);
+		System.out.println("premere: " + "\n" + "1 per modificare nome" + "\n" + "2 per modificare sesso" + "\n"
+				+ "3 per modificare data di nascita" + "\n" + "4 per modificare professione" + "\n");
+		int ind = userIn.nextInt();
+		switch (ind) {
+		case 1:
+			System.out.println("Nome da modificare:" + "\n" + owner.getName() + "\n" + "inserire nuovo nome:");
+			String name = userIn.next();
+			newOwner.setName(name);
+			break;
+		case 2:
+			System.out.println("Sesso da modificare:" + "\n" + owner.getSexChecked() + "\n" + "inserire nuovo sesso:");
+			String sex = userIn.next();
+			newOwner.setSex(sex);
+			break;
+		case 3:
+			System.out.println("Data di nascita da modificare:" + "\n" + owner.getDateOfBirth() + "\n"
+					+ "inserire nuova data di nascita:");
+			String dateOfBirth = userIn.next();
+			newOwner.setDateOfBirth(dateOfBirth);
+			break;
+		case 4:
+
+			break;
+
+		default:
+			break;
+		}
+
+		userIn.close();
+	}
+
+	public static Animal animalModifyer(Animal animal) {
+		Animal newAnimal = animal;
+		Scanner userIn = new Scanner(System.in);
+		System.out.println("premere: " + "\n" + "1 per modificare tipo animale" + "\n" + "2 per modificare nome" + "\n"
+				+ "3 per modificare altezza" + "\n" + "4 per modificare peso" + "\n" + "5 per modificare cibo preferito"
+				+ "\n");
+		int ind = userIn.nextInt();
+		switch (ind) {
+		case 1:
+
+			break;
+		case 2:
+
+			break;
+		case 3:
+
+			break;
+		case 4:
+
+			break;
+		case 5:
+
+			break;
+
+		default:
+			break;
+		}
+
+		userIn.close();
 
 	}
 
-	public static Animal animalModifyer() {
+	public static Schedule scheduleModifyer(Schedule schedule) {
+		Schedule newSchedule = schedule;
+		Scanner userIn = new Scanner(System.in);
+		System.out.println("premere: " + "\n" + "1 per modificare arrivo" + "\n" + "2 per modificare partenza" + "\n");
+		int ind = userIn.nextInt();
+		switch (ind) {
+		case 1:
 
-	}
+			break;
+		case 2:
 
-	public static Schedule scheduleModifyer() {
+			break;
+		default:
+			break;
+		}
+
+		userIn.close();
 
 	}
 

@@ -55,8 +55,11 @@ public class Owner {
 		this.profession = profession;
 	}
 
-	public void setSex(boolean sex) {
-		this.sex = sex;
+	public void setSex(String sex) {
+		if (sex.endsWith("M"))
+			this.sex = true;
+		else
+			this.sex = false;
 	}
 
 }
