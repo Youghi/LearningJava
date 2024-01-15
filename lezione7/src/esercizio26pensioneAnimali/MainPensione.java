@@ -159,7 +159,7 @@ public class MainPensione {
 		return animal;
 	}
 
-	public static Schedule scheduleCreator(Scanner userIn) {
+	public Schedule scheduleCreator(Scanner userIn) {
 		System.out.println("ora e data di arrivo (hh:mm gg/mm/aaaa): ");
 		String arrival = userIn.nextLine();
 		System.out.println("ora e data di partenza (hh:mm gg/mm/aaaa) : ");
