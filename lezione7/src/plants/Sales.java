@@ -1,11 +1,9 @@
 package plants;
 
 public class Sales {
-	private Managment manage;
-	
-	public Sales (Managment managment) {
-		this.manage = managment;
-	}
+	private Plant plant;
+	private String dateOfTransaction;
+	private Buyer buyer;
 	
 	
 

@@ -31,6 +31,7 @@ public class Managment {
 	}
 	
 	public void viewExhibition () {
+		System.out.println("La mostra e` cpmposta da seguenti esemplari");
 		for (Plant plant : plants) {
 			plant.getPlant();
 		}
