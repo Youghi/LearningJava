@@ -1,4 +1,4 @@
-package school;
+package esercizio29School;
 
 import java.util.Scanner;
 
@@ -27,9 +27,9 @@ public abstract class Personal {
 
 	public void gatherData() {
 		System.out.println("inserire nome:");
-		this.name = userIn.nextLine();
+		this.name = userIn.next();
 		System.out.println("inserire data di nascita:");
-		this.dateOfBirth = userIn.nextLine();
+		this.dateOfBirth = userIn.next();
 	}
 
 	public void getPersonal() {
@@ -42,12 +42,13 @@ public abstract class Personal {
 		switch (ind) {
 		case 1:
 			System.out.println("nome da modificare: " + this.name + "\n" + "inserire nuovo nome: ");
-			this.name = userIn.nextLine();
+			this.name = userIn.next();
 			break;
 
 		case 2:
-			System.out.println("data di nascita da modificare: " + this.dateOfBirth + "\n" + "inserire nuova data di nascita: ");
-			this.dateOfBirth = userIn.nextLine();
+			System.out.println(
+					"data di nascita da modificare: " + this.dateOfBirth + "\n" + "inserire nuova data di nascita: ");
+			this.dateOfBirth = userIn.next();
 			break;
 
 		case 3:

@@ -1,4 +1,4 @@
-package school;
+package esercizio29School;
 
 import java.util.Scanner;
 
@@ -30,10 +30,11 @@ public class Administrative extends Personal {
 	@Override
 	public void gatherData() {
 		super.gatherData();
+		
 		System.out.println("inserire mansione:");
-		this.type = userIn.nextLine();
+		this.type = userIn.next();
 		System.out.println("inserire ufficio assegnato:");
-		this.office = userIn.nextLine();
+		this.office = userIn.next();
 	}
 
 	@Override
@@ -50,12 +51,12 @@ public class Administrative extends Personal {
 		switch (ind) {
 		case 1:
 			System.out.println("mansione da modificare: " + this.type + "\n" + "inserire nuova mansione: ");
-			this.type = userIn.nextLine();
+			this.type = userIn.next();
 			break;
 
 		case 2:
 			System.out.println("ufficio assegnato da modificare: " + this.office + "\n" + "inserire nuovo ufficio assegnato: ");
-			this.office = userIn.nextLine();
+			this.office = userIn.next();
 			break;
 
 		case 3:

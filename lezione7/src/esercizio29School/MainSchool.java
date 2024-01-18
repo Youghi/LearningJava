@@ -1,4 +1,4 @@
-package school;
+package esercizio29School;
 
 import java.util.Scanner;
 

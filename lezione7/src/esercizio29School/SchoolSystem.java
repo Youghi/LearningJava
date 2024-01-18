@@ -1,4 +1,4 @@
-package school;
+package esercizio29School;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -97,7 +97,15 @@ public class SchoolSystem {
 			personal.get(ind).modifyData();
 
 		} else if (answ.equalsIgnoreCase("A")) {
-
+			for (int i = 0; i < personal.size(); i++) {
+				if (personal.get(i) instanceof Administrative) {
+					System.out.println(i + ":");
+					personal.get(i).getPersonal();
+				}
+			}
+			System.out.println("inserire numero amministrativo da modificare:");
+			int ind = userIn.nextInt();
+			personal.get(ind).modifyData();
 			
 		} else {
 			System.out.println("input non valido!");
@@ -107,10 +115,21 @@ public class SchoolSystem {
 
 	public void deletePersonal() {
 		for (int i = 0; i < personal.size(); i++) {
-			System.out.println(i + ":" + "\n" + personal.get(i) + "\n" + "_____________");
+			System.out.println(i + ":" + "\n");
+			personal.get(i).getPersonal();
+			System.out.println("_____________");
 		}
 		System.out.println("inserire numero dipendente da licenziare");
 		int ind = userIn.nextInt();
 		personal.remove(ind);
 	}
+	
+//	public void ammToTeach () {
+//		for (int i = 0; i < personal.size(); i++) {
+//			if (personal.get(i) instanceof Teacher) {
+//				System.out.println(i + ":");
+//				personal.get(i).getPersonal();
+//			}
+//		}
+//	}
 }
