@@ -1,4 +1,4 @@
-package lezione26PensioneAnimaliCorretta;
+package lezione26PensioneAnimaliCorretta.lezione26PensioneAnimaliCorretta;
 
 import java.util.ArrayList;
 import java.util.Scanner;

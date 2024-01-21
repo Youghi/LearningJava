@@ -1,12 +1,7 @@
-package lezione26PensioneAnimaliCorretta;
+package lezione26PensioneAnimaliCorretta.lezione26PensioneAnimaliCorretta;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-
-import esercizio26pensioneAnimali.Animal;
-import esercizio26pensioneAnimali.Form;
-import esercizio26pensioneAnimali.Owner;
-import esercizio26pensioneAnimali.Schedule;
 
 public class Pensione {
 
@@ -22,7 +17,7 @@ public class Pensione {
 	public void addForm() {
 		SchedaS scheda = new SchedaS(userIn);
 
-		System.out.println("Lei è gia stato nostro cliente?" + "\n" + "1 - si" + "\n" + " 2 - no");
+		System.out.println("Lei è gia stato nostro cliente?" + "\n" + "1 - si" + "\n" + "2 - no");
 		int ind = userIn.nextInt();
 
 		switch (ind) {
